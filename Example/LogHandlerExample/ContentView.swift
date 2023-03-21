@@ -24,7 +24,7 @@ struct ContentView: View {
         Form {
 
             Button {
-                logger.trace("trace", metadata: ["person": .string("\(bob)")])
+                logger.trace("trace", alice, bob, metadata: ["person": .string("\(bob)")])
             } label: {
                 Text("trace")
             }

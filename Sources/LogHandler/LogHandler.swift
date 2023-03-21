@@ -15,6 +15,8 @@ public struct LightsLogHandler: LogHandler {
 
     public var logLevel: Logger.Level = .info
     public var oslogLevelTransformer: ((Logging.Logger.Level) -> OSLogType) = oslogTransformer
+    public var separator: String = ""
+    public var terminator: String = "\n"
 
     private let subsystem: String
     private let category: String
@@ -72,7 +74,7 @@ public struct LightsLogHandler: LogHandler {
             combinedPrettyMetadata = self.prettyMetadata
         }
 
-        var output = "[\(level)] \(file.components(separatedBy: "/").last!):\(line) \(message.description)"
+        var output = "[\(level)] \(file.components(separatedBy: "/").last!):\(line) \(separator) \(message.description)"
 
         /* oslogger will not print metadata.
 
@@ -96,7 +98,7 @@ public struct LightsLogHandler: LogHandler {
         }
 
         if let combinedPrettyMetadata {
-            output += "\n" + combinedPrettyMetadata
+            output += terminator + combinedPrettyMetadata
         }
 
         if loggers.contains(.print) {

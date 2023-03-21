@@ -17,7 +17,8 @@ extension Logger {
     static func initialization() {
 
         LoggingSystem.bootstrap { label in
-            LightsLogHandler(subsystem: Bundle.main.bundleIdentifier!, category: label, loggers: [.oslog, .print], recorder: LogRecorder())
+            var handler = LightsLogHandler(subsystem: Bundle.main.bundleIdentifier!, category: label, loggers: [.oslog, .print], recorder: LogRecorder())
+            return handler
         }
 
         func createLogger(label: String) -> Logging.Logger {
