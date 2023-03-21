@@ -8,58 +8,59 @@
 import SwiftUI
 import Logging
 
+struct Person {
+    var name: String
+    var age: Int
+}
+
 struct ContentView: View {
 
-    let logger: Logger
+    let logger: Logger = Logger.content
 
-    init() {
-        var logger = Logger(label: "example.content")
-        logger[metadataKey: "uuid"] = "\(UUID())"
-        logger.logLevel = .trace
-        self.logger = logger
-    }
+    let alice = Person(name: "Alice", age: 17)
+    let bob = Person(name: "Bob", age: 18)
 
     var body: some View {
         Form {
 
             Button {
-                logger.trace("trace")
+                logger.trace("trace", metadata: ["person": .string("\(bob)")])
             } label: {
                 Text("trace")
             }
 
             Button {
-                logger.debug("critical")
+                logger.debug("critical", metadata: ["person": .array([.string("\(alice)"), .string("\(bob)")])])
             } label: {
                 Text("debug")
             }
 
             Button {
-                logger.info("info")
+                logger.info("info", metadata: ["person": .dictionary(["alice": .string("\(alice)"), "bob": "\(bob)"])])
             } label: {
                 Text("info")
             }
 
             Button {
-                logger.notice("notice")
+                logger.notice("notice", metadata: ["person": .string("\(bob)")])
             } label: {
                 Text("notice")
             }
 
             Button {
-                logger.warning("warning")
+                logger.warning("warning", metadata: ["person": .string("\(bob)")])
             } label: {
                 Text("warning")
             }
 
             Button {
-                logger.error("error")
+                logger.error("error", metadata: ["person": .string("\(bob)")])
             } label: {
                 Text("error")
             }
 
             Button {
-                logger.critical("critical")
+                logger.critical("critical", metadata: ["person": .string("\(bob)")])
             } label: {
                 Text("critical")
             }
