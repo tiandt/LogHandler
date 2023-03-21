@@ -24,43 +24,43 @@ struct ContentView: View {
         Form {
 
             Button {
-                logger.trace("trace", alice, bob, metadata: ["person": .string("\(bob)")])
+                logger.trace("trace message", alice, bob, metadata: ["person": .string("\(bob)")])
             } label: {
                 Text("trace")
             }
 
             Button {
-                logger.debug("critical", metadata: ["person": .array([.string("\(alice)"), .string("\(bob)")])])
+                logger.debug("critical message", metadata: ["person": .array([.string("\(alice)"), .string("\(bob)")])])
             } label: {
                 Text("debug")
             }
 
             Button {
-                logger.info("info", metadata: ["person": .dictionary(["alice": .string("\(alice)"), "bob": "\(bob)"])])
+                logger.info("info message", metadata: ["person": .dictionary(["alice": .string("\(alice)"), "bob": "\(bob)"])])
             } label: {
                 Text("info")
             }
 
             Button {
-                logger.notice("notice", metadata: ["person": .string("\(bob)")])
+                logger.notice("notice message", metadata: ["person": .string("\(bob)")])
             } label: {
                 Text("notice")
             }
 
             Button {
-                logger.warning("warning", metadata: ["person": .string("\(bob)")])
+                logger.warning("warning message", metadata: ["person": .string("\(bob)")])
             } label: {
                 Text("warning")
             }
 
             Button {
-                logger.error("error", metadata: ["person": .string("\(bob)")])
+                logger.error("error message", metadata: ["person": .string("\(bob)")])
             } label: {
                 Text("error")
             }
 
             Button {
-                logger.critical("critical", metadata: ["person": .string("\(bob)")])
+                logger.critical("critical message", metadata: ["person": .string("\(bob)")])
             } label: {
                 Text("critical")
             }

@@ -18,6 +18,7 @@ extension Logger {
 
         LoggingSystem.bootstrap { label in
             var handler = LightsLogHandler(subsystem: Bundle.main.bundleIdentifier!, category: label, loggers: [.oslog, .print], recorder: LogRecorder())
+            handler.separator = " ----\n"
             return handler
         }
 
