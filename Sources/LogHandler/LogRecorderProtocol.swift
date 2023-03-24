@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol LogRecorderProtocol {
-    func recorde(message: String)
+    func write(_ string: String)
 }

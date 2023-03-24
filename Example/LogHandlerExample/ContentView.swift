@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Logging
+import Combine
 
 struct Person {
     var name: String
@@ -17,6 +18,7 @@ struct ContentView: View {
 
     let logger: Logger = Logger.content
 
+    let s1 = Just("ContentView init").print("[init]", to: Logger.content).sink { _ in }
     let alice = Person(name: "Alice", age: 17)
     let bob = Person(name: "Bob", age: 18)
 

@@ -107,7 +107,7 @@ public struct LightsLogHandler: LogHandler {
             print("\(dateFormatter.string(from: Date())) \(level.symbol) [\(category)] [\(level)] \(file.components(separatedBy: "/").last!):\(line)\(separator)\(output)")
         }
 
-        recorder?.recorde(message: output)
+        recorder?.write(output)
     }
 
     private var prettyMetadata: String?

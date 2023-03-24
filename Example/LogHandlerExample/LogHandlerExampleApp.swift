@@ -8,16 +8,19 @@
 import SwiftUI
 import LogHandler
 import Logging
+import Combine
 
 extension Logger {
 
+    static let recorder = LogRecorder()
     static var main: Logger!
     static var content: Logger!
+    static var cancellable = Set<AnyCancellable>()
 
     static func initialization() {
 
         LoggingSystem.bootstrap { label in
-            var handler = LightsLogHandler(subsystem: Bundle.main.bundleIdentifier!, category: label, loggers: [.oslog, .print], recorder: LogRecorder())
+            var handler = LightsLogHandler(subsystem: Bundle.main.bundleIdentifier!, category: label, loggers: [.oslog, .print], recorder: recorder)
             handler.separator = " ----\n"
             return handler
         }
@@ -45,7 +48,7 @@ struct LightsLogHandlerExampleApp: App {
         WindowGroup {
             ContentView()
                 .onAppear {
-                    Logger.main.info("onAppear:\(self)")
+                    Logger.main.info("onAppear")
                 }
         }
     }

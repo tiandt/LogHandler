@@ -13,6 +13,7 @@
 		3F87A7E129C94AEA00D44F9F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F87A7E029C94AEA00D44F9F /* Preview Assets.xcassets */; };
 		3F87A7EB29C94B1A00D44F9F /* LogHandler in Frameworks */ = {isa = PBXBuildFile; productRef = 3F87A7EA29C94B1A00D44F9F /* LogHandler */; };
 		3F87A7ED29C94D6C00D44F9F /* LogRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F87A7EC29C94D6C00D44F9F /* LogRecorder.swift */; };
+		3FAB1D1A29CD7BBE00EFEDDE /* Logger+TextOutputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAB1D1929CD7BBE00EFEDDE /* Logger+TextOutputStream.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		3F87A7E029C94AEA00D44F9F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3F87A7E829C94B0200D44F9F /* LogHandler */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = LogHandler; path = ..; sourceTree = "<group>"; };
 		3F87A7EC29C94D6C00D44F9F /* LogRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRecorder.swift; sourceTree = "<group>"; };
+		3FAB1D1929CD7BBE00EFEDDE /* Logger+TextOutputStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+TextOutputStream.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				3F87A7D929C94AE900D44F9F /* LogHandlerExampleApp.swift */,
 				3F87A7DB29C94AE900D44F9F /* ContentView.swift */,
 				3F87A7EC29C94D6C00D44F9F /* LogRecorder.swift */,
+				3FAB1D1929CD7BBE00EFEDDE /* Logger+TextOutputStream.swift */,
 				3F87A7DD29C94AEA00D44F9F /* Assets.xcassets */,
 				3F87A7DF29C94AEA00D44F9F /* Preview Content */,
 			);
@@ -164,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F87A7DC29C94AE900D44F9F /* ContentView.swift in Sources */,
+				3FAB1D1A29CD7BBE00EFEDDE /* Logger+TextOutputStream.swift in Sources */,
 				3F87A7DA29C94AE900D44F9F /* LogHandlerExampleApp.swift in Sources */,
 				3F87A7ED29C94D6C00D44F9F /* LogRecorder.swift in Sources */,
 			);

@@ -11,11 +11,12 @@ class LogRecorder: LogRecorderProtocol {
 
     var lines: [String] = []
 
-    func recorde(message: String) {
-        lines.append(message)
+    func write(_ string: String) {
+        lines.append(string)
     }
 
     func clear() {
         lines = []
     }
 }
+
