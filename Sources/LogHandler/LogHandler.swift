@@ -1,5 +1,5 @@
 //
-//  LogHandler.swift
+//  DTLogHandler.swift
 //
 //
 //  Created by tdt on 2023/3/20.
@@ -11,7 +11,7 @@ import Logging
 import struct Logging.Logger
 import os
 
-public struct LightsLogHandler: LogHandler {
+public struct DTLogHandler: LogHandler {
 
     public var logLevel: Logger.Level = .info
     public var oslogLevelTransformer: ((Logging.Logger.Level) -> OSLogType) = oslogTransformer
@@ -139,7 +139,7 @@ public struct LightsLogHandler: LogHandler {
     }
 }
 
-public extension LightsLogHandler {
+public extension DTLogHandler {
     enum LoggerType {
         case print
         case oslog

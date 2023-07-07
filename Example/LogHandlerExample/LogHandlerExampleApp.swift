@@ -20,7 +20,7 @@ extension Logger {
     static func initialization() {
 
         LoggingSystem.bootstrap { label in
-            var handler = LightsLogHandler(subsystem: Bundle.main.bundleIdentifier!, category: label, loggers: [.oslog, .print], recorder: recorder)
+            var handler = DTLogHandler(subsystem: Bundle.main.bundleIdentifier!, category: label, loggers: [.oslog, .print], recorder: recorder)
             handler.separator = " ----\n"
             return handler
         }
@@ -39,7 +39,7 @@ extension Logger {
 }
 
 @main
-struct LightsLogHandlerExampleApp: App {
+struct DTLogHandlerExampleApp: App {
 
     init() {
         Logger.initialization()
