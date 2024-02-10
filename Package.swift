@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "LogHandler",
     platforms: [
-        .macOS(.v11), .iOS(.v14), .tvOS(.v14), .watchOS(.v7), .visionOS(.v1)
+        .macOS(.v12), .iOS(.v15), .tvOS(.v15), .watchOS(.v7), .visionOS(.v1)
     ],
     products: [
         .library(
@@ -21,9 +21,17 @@ let package = Package(
             name: "LogHandler",
             dependencies: [
                 .product(name: "Logging", package: "swift-log"),
-            ]),
+            ],
+            swiftSettings: swiftSettings
+	),
         .testTarget(
             name: "LogHandlerTests",
             dependencies: ["LogHandler"]),
     ]
 )
+
+let swiftSettings: [SwiftSetting] = [
+    .enableUpcomingFeature("StrictConcurrency"),
+    .define("CONSOLE_PRINT", .when(configuration: .debug)), // 控制台输出总开关，release包就不输出了
+    .define("STUDIO_PRINT", .when(configuration: .debug)), // print输出总开关，release包就不输出了
+]
